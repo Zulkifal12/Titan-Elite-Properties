@@ -19,3 +19,7 @@
   background-color: rgb(231, 15, 15) !important;
   width: 100%;
 }
+.noInternet {
+  color: rgb(210, 27, 27);
+  background-color: rgb(235, 231, 231);
+}

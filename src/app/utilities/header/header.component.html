@@ -10,6 +10,15 @@
     <span>Titan Elite Properties</span>
     <span class="example-spacer"></span>
     <button
+      *ngIf="isConnected"
+      mat-stroked-button
+      color="warn"
+      class="noInternet"
+    >
+      <mat-icon>signal_wifi_off</mat-icon>
+      No Network
+    </button>
+    <button
       mat-icon-button
       class="example-icon favorite-icon"
       aria-label="Example icon-button with heart icon"

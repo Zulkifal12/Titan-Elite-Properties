@@ -60,7 +60,13 @@
               <div class="row mt-2">
                 <mat-form-field appearance="fill" class="col">
                   <mat-label>Contact</mat-label>
-                  <input matInput type="number" formControlName="contact" />
+                  <input
+                    matInput
+                    type="telephone"
+                    formControlName="contact"
+                    required
+                  />
+                  <mat-hint>Must be 11 numbers.</mat-hint>
                 </mat-form-field>
 
                 <mat-form-field class="sku-modal-panel" class="col">

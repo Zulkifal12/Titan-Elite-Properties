@@ -53,7 +53,11 @@ export class AddEditPropertyComponent implements OnInit {
       coveredAreaSQFT: new FormControl('', Validators.required),
       price: new FormControl('', Validators.required),
       imageUrl: new FormControl(defaultImageUrlsubmit),
-      contact: new FormControl('', Validators.required),
+      contact: new FormControl('', [
+        Validators.required,
+        Validators.minLength(11),
+        Validators.maxLength(11),
+      ]),
       bed: new FormControl('', Validators.required),
       bath: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
