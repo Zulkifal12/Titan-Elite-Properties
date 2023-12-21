@@ -20,4 +20,4 @@ export const propertyLocation = [
   'SouthWest',
 ];
 
-export const defaultImageUrlsubmit = 'https://t.ly/sAujH';
+export const defaultImageUrlsubmit = 'https://loremflickr.com/640/480/city';

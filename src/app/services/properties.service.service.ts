@@ -10,22 +10,18 @@ import { apiURL } from '../utilities/app.const';
 export class PropertiesServiceService {
   endPointUrl = apiURL;
   constructor(public http: HttpClient) {}
-
+  //Getting properties from the API
   getProperties(): Observable<Property[]> {
-    return this.http
-      .get<Property[]>(
-        'https://65806b0d6ae0629a3f552390.mockapi.io/api/properties'
-      )
-      .pipe(
-        tap((resp) => {
-          resp = new Array<Property>();
-        }),
-        catchError((err) => {
-          return of(err);
-        })
-      );
+    return this.http.get<Property[]>(this.endPointUrl).pipe(
+      tap((resp) => {
+        resp = new Array<Property>();
+      }),
+      catchError((err) => {
+        return of(err);
+      })
+    );
   }
-
+  //Updating properties from the API
   updateProperties(property: Property) {
     return this.http
       .put<Property>(this.endPointUrl + `/${property.id}`, property)
@@ -37,8 +33,9 @@ export class PropertiesServiceService {
       );
   }
 
+  //Deleting properties from the API
+
   deleteProperty(id: number) {
-    console.log('id', id);
     return this.http.delete(this.endPointUrl + `/${id}`).pipe(
       tap(() => {}),
       catchError((err) => {
@@ -46,8 +43,9 @@ export class PropertiesServiceService {
       })
     );
   }
+
+  //Adding properties from the API
   addProperty(property: Property) {
-    console.log('i am from service property:', property);
     return this.http.post(this.endPointUrl, property).pipe(
       tap(() => {}),
       catchError((err) => {

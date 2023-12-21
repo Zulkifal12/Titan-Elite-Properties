@@ -1,0 +1,11 @@
+.filter-wrapper {
+  background: white;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: 64px;
+}
+img {
+  margin-top: 250px;
+  border: 1 px solid gray;
+}

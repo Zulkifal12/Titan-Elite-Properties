@@ -33,6 +33,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { UserfavouriteComponent } from './components/userfavourite/userfavourite.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InterceptorService } from './interceptor/interceptor.service';
+import { ContactusComponent } from './components/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { InterceptorService } from './interceptor/interceptor.service';
     AddEditPropertyComponent,
     UserviewComponent,
     UserfavouriteComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,

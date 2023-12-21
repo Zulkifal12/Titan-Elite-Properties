@@ -22,7 +22,7 @@ export class PropertyState {
     return state.propertiesLoaded;
   }
   constructor(private propertiesService: PropertiesServiceService) {}
-
+  //Action for getting properties
   @Action(PropertyAction.GetProperties)
   getAllProperties(
     ctx: StateContext<PropertyStateModel>,
@@ -56,6 +56,7 @@ export class PropertyState {
     return propertyType[randomIndex];
   }
 
+  //Action for updating properties
   @Action(PropertyAction.updateProperty)
   updateProperty(
     ctx: StateContext<PropertyStateModel>,
@@ -74,7 +75,7 @@ export class PropertyState {
       })
     );
   }
-
+  //Action for deleting properties
   @Action(PropertyAction.deleteProperty)
   deleteProperty(
     ctx: StateContext<PropertyStateModel>,
@@ -93,13 +94,12 @@ export class PropertyState {
       })
     );
   }
-
+  //Action for adding properties
   @Action(PropertyAction.addProperty)
   addProperty(
     ctx: StateContext<PropertyStateModel>,
     action: PropertyAction.addProperty
   ) {
-    console.log('i am actioned payload', action.payload);
     return this.propertiesService.addProperty(action.payload).pipe(
       tap((resp: Property) => {
         const properties = ctx.getState().properties;
