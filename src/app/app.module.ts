@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -34,6 +34,7 @@ import { UserfavouriteComponent } from './components/userfavourite/userfavourite
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InterceptorService } from './interceptor/interceptor.service';
 import { ContactusComponent } from './components/contactus/contactus.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,9 @@ import { ContactusComponent } from './components/contactus/contactus.component';
     MatProgressBarModule,
     NgxsModule.forRoot([PropertyState]),
     NgxsLoggerPluginModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: true,
+    }),
   ],
   providers: [
     {
