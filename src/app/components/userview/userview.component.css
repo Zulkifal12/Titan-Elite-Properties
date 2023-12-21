@@ -16,10 +16,10 @@
 .user-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   margin-top: 150px;
+  margin-left: 20px;
 }
-/* your-component.component.css */
 
 button {
   cursor: pointer;
@@ -27,8 +27,8 @@ button {
 }
 
 button.selected {
-  background-color: #5b57d9; /* Change to your selected color */
-  color: #ffffff; /* Change to your selected text color */
+  background-color: #5b57d9;
+  color: #ffffff;
 }
 img {
   max-width: 270px;
