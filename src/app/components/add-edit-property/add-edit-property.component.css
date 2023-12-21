@@ -1,0 +1,18 @@
+.add-property {
+  height: auto;
+  width: 1050px;
+  padding: 20px;
+}
+.add-details h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.display-h1 {
+  font-size: 30px;
+}
+.buttons-wrap button {
+  margin-right: 10px;
+}
+.close-button {
+  background-color: lightgray;
+}

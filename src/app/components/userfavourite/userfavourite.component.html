@@ -1,0 +1,80 @@
+<div class="row filter-wrapper py-3">
+  <div class="col-md-12 d-flex justify-content-end">
+    <div class="mt-4">
+      <button mat-raised-button color="primary" type="button">
+        <mat-icon>settings_phone</mat-icon> Contact Us
+      </button>
+    </div>
+    <div class="mt-4 mx-5">
+      <button
+        mat-raised-button
+        color="warn"
+        type="button"
+        routerLink="/userview"
+      >
+        <mat-icon>keyboard_backspace</mat-icon> Back
+      </button>
+    </div>
+  </div>
+</div>
+<div class="user-wrapper">
+  <mat-card class="example-card" *ngFor="let property of favouritesHouses">
+    <mat-card-header>
+      <mat-card-title>{{ property.title }}</mat-card-title>
+      <mat-card-subtitle>{{ property.propertyType }}</mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="{{ property.imageUrl }}"
+      alt="Photo of a Residency."
+    />
+    <mat-card-content
+      class="d-flex justify-content-between pt-2"
+      style="height: 70px"
+    >
+      <div>
+        <p class="d-flex align-items-center" matTooltip="Demand Price">
+          <mat-icon>attach_money</mat-icon>:
+          {{ property.price | currency }}
+        </p>
+        <p class="d-flex align-items-center" matTooltip="Direction">
+          <mat-icon>directions</mat-icon>:
+          {{ property.address.toUpperCase() }}
+        </p>
+      </div>
+      <div>
+        <p class="d-flex align-items-center" matTooltip="Beds">
+          <mat-icon>bed</mat-icon> : {{ property.bed }}
+        </p>
+        <p
+          class="d-flex align-items-center"
+          style="height: 23px"
+          matTooltip="Commercial"
+        >
+          <mat-icon>store</mat-icon> :
+          <mat-checkbox
+            [checked]="property.isCommercial"
+            disabled
+          ></mat-checkbox>
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-between">
+      <button mat-raised-button color="primary" (click)="contactOwner()">
+        Contact Owner
+      </button>
+      <button mat-raised-button color="primary" (click)="removeFvrt(property)">
+        Remove
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<div
+  class="d-flex justify-content-center align-items-center"
+  style="height: 70vh"
+>
+  <div *ngIf="!favouritesHouses.length" class="center-container">
+    <img src="../../../assets/images/nothing.jpg" alt="" />
+    <h2 style="text-align: center; margin-top: 8px">Nothing in Favorite.</h2>
+  </div>
+</div>

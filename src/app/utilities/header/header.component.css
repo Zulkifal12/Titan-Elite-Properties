@@ -1,0 +1,21 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.active-link {
+  color: red;
+}
+/* app-header.component.css */
+
+.loader {
+  position: fixed !important;
+  z-index: 99;
+  background-color: rgb(231, 15, 15) !important;
+  width: 100%;
+}

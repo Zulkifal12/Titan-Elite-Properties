@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="add-property">
+    <form [formGroup]="form">
+      <div class="add-details">
+        <div class="row mt-sm-5 mt-1">
+          <h4 class="display-h1" *ngIf="!isEditable">View Property</h4>
+          <h4 class="display-h1" *ngIf="isEditable">
+            {{ this.property ? "Edit Property " : "Add Property" }}
+          </h4>
+        </div>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="form-content">
+              <div class="row">
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Name</mat-label>
+                  <input matInput formControlName="title" required />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Area (SQFT)</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="coveredAreaSQFT"
+                    required
+                  />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Price</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="price"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="row mt-2">
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Beds</mat-label>
+                  <input matInput type="number" formControlName="bed" />
+                </mat-form-field>
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Bath's</mat-label>
+                  <input matInput type="number" formControlName="bath" />
+                </mat-form-field>
+
+                <mat-form-field class="sku-modal-panel" class="col">
+                  <mat-label>Property Type</mat-label>
+                  <mat-select formControlName="propertyType" required>
+                    <mat-option
+                      *ngFor="let property of propertyType"
+                      [value]="property"
+                    >
+                      {{ property }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="row mt-2">
+                <mat-form-field appearance="fill" class="col">
+                  <mat-label>Contact</mat-label>
+                  <input matInput type="number" formControlName="contact" />
+                </mat-form-field>
+
+                <mat-form-field class="sku-modal-panel" class="col">
+                  <mat-label>Location</mat-label>
+                  <mat-select formControlName="address">
+                    <mat-option
+                      *ngFor="let propertyLocation of propertyLocation"
+                      [value]="propertyLocation"
+                    >
+                      {{ propertyLocation }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <mat-form-field appearance="fill">
+                <mat-label>Address</mat-label>
+                <input matInput formControlName="city_address" />
+              </mat-form-field>
+            </div>
+            <div class="sku-checkbox-wrap">
+              <div>
+                <mat-checkbox formControlName="isCommercial"
+                  >Commercial</mat-checkbox
+                >
+              </div>
+            </div>
+
+            <div class="buttons-wrap mt-2">
+              <button
+                mat-raised-button
+                type="submit"
+                color="primary"
+                *ngIf="isEditable"
+                (click)="onsubmit()"
+              >
+                {{ this.property ? "Update" : "Add" }}
+              </button>
+              <button
+                mat-raised-button
+                color="primary"
+                *ngIf="!isEditable"
+                (click)="openEdit(true)"
+              >
+                Edit
+              </button>
+              <button
+                *ngIf="!isEditable"
+                mat-raised-button
+                color="warn"
+                (click)="onDelete()"
+              >
+                Delete
+              </button>
+              <button
+                mat-button
+                type="button"
+                (click)="onClose()"
+                class="close-button"
+              >
+                {{ !isEditable ? "Close" : "Cancel" }}
+              </button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <img
+                [src]="form.get('imageUrl')?.value || defaultImageUrl"
+                alt="Property Image"
+                width="220"
+                height="270"
+              /><span *ngIf="!this.property || isEditable"
+                ><input type="file" name="Property Image" id="#"
+              /></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

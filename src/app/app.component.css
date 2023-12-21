@@ -1,0 +1,56 @@
+:root {
+  /* Primary Colors */
+  --primary: #0052cc;
+  --light-primary: #2196f3;
+  --transparent-primary: #ecf4ff;
+  --trash-danger: #ea0606;
+  --default: #5e6c84;
+  --secondary: #0747a6;
+  --alternate: #172b4d;
+  --success: #36b37e;
+  --warning: #e67e22;
+  --danger: #ff5630;
+  --alert: #996533;
+  --order: #ffc400;
+
+  /* Theme Colors */
+  --theme-color: #eb6222;
+  --theme-bg: #ffc846;
+
+  /* Hover and Active States */
+  --primary-hover: #008da6;
+  --primary-active: #00c7e6;
+  --alternate-hover: #6554c0;
+  --secondary-hover: #00b8d9;
+  --secondary-active: #063a87;
+
+  /* Neutral Colors */
+  --basic: #fff;
+  --light: #f4f5f7;
+  --border: #dfe1e6;
+  --transparent-border: #f3f3f3;
+  --highlight: #fafbfc;
+  --menu-heading: #ebecf0;
+
+  /* Other Colors */
+  --focus: #c1c7d0;
+  --sub-heading: #97a0af;
+  --other-heading: #4d4d4d;
+
+  /* Dark Colors */
+  --dark: #000;
+  --darker: #121212;
+  --darker-active: #242424;
+  --dark-rock: #344563;
+  --dark-slate: #091e42;
+  --title-color: #253858;
+
+  /* Gray Shades */
+  --gray-color1: #505f79;
+  --gray-color2: #5e6c84;
+  --gray-color3: #6b778c;
+  --gray-color4: #7a869a;
+  --gray-color5: #8993a4;
+  --gray-color6: #a5adba;
+  --gray-color7: #b3bac5;
+}

@@ -1,0 +1,39 @@
+<div class="header">
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="" routerLink="">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example home icon"
+        fontIcon="home"
+      ></mat-icon>
+    </button>
+    <span>Titan Elite Properties</span>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="example-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+      routerLink=""
+      [routerLinkActive]="['active-link']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      matTooltip="Admin View"
+    >
+      <mat-icon>table_chart</mat-icon>
+    </button>
+
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with share icon"
+      routerLink="userview"
+      routerLinkActive="active-link"
+      [routerLinkActive]="['active-link']"
+      matTooltip="User View"
+    >
+      <mat-icon>grid_on</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div *ngIf="loaderService.isLoading | async" class="loader">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+</div>

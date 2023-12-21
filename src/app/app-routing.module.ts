@@ -1,10 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { patch } from '@ngxs/store/operators';
+import { UserviewComponent } from './components/userview/userview.component';
 
-const routes: Routes = [];
+import { UserfavouriteComponent } from './components/userfavourite/userfavourite.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'userview',
+    component: UserviewComponent,
+  },
+  {
+    path: 'userfvrt',
+    component: UserfavouriteComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
